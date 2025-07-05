@@ -1,0 +1,7 @@
+POST http://localhost:5000/api/qa-pairs HTTP/1.1
+Content-Type: application/json
+
+{
+	"question": "What?",
+	"answer": "whatever"
+}

@@ -2,3 +2,5 @@ Flask
 python-dotenv
 pytest
 coverage
+pylint
+black

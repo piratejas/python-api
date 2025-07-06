@@ -7,7 +7,7 @@ VENV := .venv
 VENV_PYTHON := $(VENV)/bin/python
 PIP := $(VENV)/bin/pip
 
-.PHONY: build run clean
+.PHONY: build run clean lint format test check
 
 build: requirements.txt
 	$(PYTHON) -m venv $(VENV)
@@ -19,3 +19,11 @@ run: build
 
 clean:
 	rm -rf $(VENV) __pycache__ .pytest_cache
+
+lint:
+	$(VENV)/bin/pylint app tests
+
+format:
+	$(VENV)/bin/black app tests
+
+check: lint test

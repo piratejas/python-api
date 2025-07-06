@@ -26,4 +26,9 @@ lint:
 format:
 	$(VENV)/bin/black app tests
 
+test:
+	-coverage run -m pytest tests -vv -s
+	@echo "TEST COVERAGE REPORT"
+	coverage report -m 
+
 check: lint test

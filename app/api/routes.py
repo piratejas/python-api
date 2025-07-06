@@ -13,7 +13,7 @@ def create_qa():
     return handle_create_qa(request.get_json())
 
 
-@api.route("qa-pairs", methods=["DELETE"])
+@api.route("/qa-pairs", methods=["DELETE"])
 def delete_qa():
     question = request.args.get("question").strip().lower()
     return handle_delete_qa(question)

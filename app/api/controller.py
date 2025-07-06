@@ -49,11 +49,11 @@ def handle_list_questions():
 def handle_delete_qa(question_param: str):
     try:
         validate_and_normalise_question_param(question_param)
-        result = soft_delete_qa_pair(question_param)
-        if not result:
-            return jsonify({"error": "Question not found"}), 404
+        soft_delete_qa_pair(question_param)
         return jsonify({"message": "QA pair has been deleted"}), 200
     except ValidationError as e:
         return jsonify({"error": e.message}), 400
+    except FileNotFoundError as e:
+        return jsonify({"error": str(e)}), 404
     except Exception:
         return jsonify({"error": "Internal server error"}), 500

@@ -18,9 +18,8 @@ def list_questions(limit=10) -> list[str]:
     return [q for q, qa in _qa_store.items() if not qa.is_deleted][:limit]
 
 
-def mark_qa_deleted(question: str) -> bool:
+def mark_qa_deleted(question: str):
     qa = _qa_store.get(question)
     if not qa:
-        return False
+        raise FileNotFoundError("Question not found")
     qa.soft_delete()
-    return True

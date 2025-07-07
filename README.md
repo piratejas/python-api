@@ -92,14 +92,14 @@ Marks a Q&A pair as deleted (soft-delete).
 	├── api/
 	│   ├── routes.py       	# HTTP endpoints (Flask)
 	│   └── controller.py   	# Request orchestration, validation, error mapping
-	├── service.py				# Business logic
-	├── repository.py			# Data layer (in-memory store)
-	├── models.py 				# Domain model (QAPair)
+	├── service.py			# Business logic
+	├── repository.py		# Data layer (in-memory store)
+	├── models.py 			# Domain model (QAPair)
 	├── utils/
 	│   ├── validation.py   	# Input validation helpers
 	│   └── exceptions.py   	# Custom exceptions (e.g., ValidationError)
 	├── __init__.py         	# App factory
-	└── run.py					# Entry point
+	└── run.py			# Entry point
 
 
 ---

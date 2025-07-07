@@ -1,5 +1,5 @@
 from flask import jsonify
-from .service import (
+from ..service import (
     add_qa_pair,
     get_answer_by_question,
     get_all_questions,
